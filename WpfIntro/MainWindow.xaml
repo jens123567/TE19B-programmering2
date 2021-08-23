@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfIntro.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:WpfIntro" mc:Ignorable="d" Title="appen" Height="400" Width="300" Background="#4a4a4a">
+    <StackPanel Margin="12">
+        <Label Margin="5" FontSize="20" FontWeight="bold" Foreground="#fff">Ange text</Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Foreground="#fff">Namn</Label>
+            <TextBox Name="textBoxName" Width="150"></TextBox>
+        </StackPanel>
+        <Button Margin="5" Height="30">Avbryt</Button>
+        <Button Margin="5" Height="30">okej</Button>
+    </StackPanel>
+</Window>
