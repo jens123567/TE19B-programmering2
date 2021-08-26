@@ -1,0 +1,11 @@
+﻿<Window x:Class="Labb1.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Labb1" mc:Ignorable="d" Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="5">
+        <Label FontSize="30">Meddelanden</Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Margin="5">Ange en text</Label>
+            <TextBox Name="inputRuta" Margin="5" Width="300"></TextBox>
+        </StackPanel>
+        <Button Click="Skicka_Click" Margin="5" Width="200" Height="30" HorizontalAlignment="Left">Skicka!</Button>
+        <TextBlock Margin="5" Background="#FFF" Height="100" TextWrapping="Wrap" Name="textRuta"></TextBlock>
+    </StackPanel>
+</Window>
