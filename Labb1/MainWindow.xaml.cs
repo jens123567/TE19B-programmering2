@@ -36,8 +36,10 @@ namespace Labb1
             // Läs in från formuläret
             inTexten = inputRuta.Text;
 
+            inputRuta.Text = "";
+
             // Skriv ut i formuläret
-            textRuta.Text = inTexten;
+            textRuta.Text += inTexten + "\n";
         }
     }
 }
