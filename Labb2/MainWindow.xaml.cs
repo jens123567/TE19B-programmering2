@@ -23,6 +23,24 @@ namespace Labb2
         public MainWindow()
         {
             InitializeComponent();
+
+
+
         }
+        private void clickText(Object sender, RoutedEventArgs e)
+        {
+            reverseText.Text = OmvändSträng(inputText.Text);
+
+            static string OmvändSträng(string text)
+            {
+                string omvändText = "";
+                for (int i = text.Length - 1; i >= 0; i--)
+                {
+                    omvändText += text[i];
+                }
+                return omvändText;
+            }
+        }
+
     }
 }

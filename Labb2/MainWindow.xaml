@@ -2,9 +2,9 @@
     <StackPanel Margin="5">
         <Label FontSize="30">Vända på text</Label>
         <Label Margin="5">Ange en text</Label>
-        <TextBox Margin="5" Height="50"></TextBox>
-        <Button Margin="5" Width="200" Height="30" HorizontalAlignment="Left">Kör</Button>
+        <TextBox Name="inputText" Margin="5" Height="50"></TextBox>
+        <Button Click="clickText" Margin="5" Width="200" Height="30" HorizontalAlignment="Left">Kör</Button>
         <Label>Texten omvänd</Label>
-        <TextBlock Margin="5" Background="#FFF" Height="100" TextWrapping="Wrap"></TextBlock>
+        <TextBlock Name="reverseText" Margin="5" Background="#FFF" Height="100" TextWrapping="Wrap"></TextBlock>
     </StackPanel>
 </Window>
