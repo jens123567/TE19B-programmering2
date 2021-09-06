@@ -24,5 +24,26 @@ namespace calculator
         {
             InitializeComponent();
         }
+
+        private void addNumbers(Object sender, RoutedEventArgs e)
+        {
+            int temp = int.Parse(number1.Text) + int.Parse(number2.Text);
+            result.Text = temp.ToString();
+        }
+        private void subtract(Object sender, RoutedEventArgs e)
+        {
+            int temp = int.Parse(number1.Text) - int.Parse(number2.Text);
+            result.Text = temp.ToString();
+        }
+        private void multiply(Object sender, RoutedEventArgs e)
+        {
+            int temp = int.Parse(number1.Text) * int.Parse(number2.Text);
+            result.Text = temp.ToString();
+        }
+        private void divide(Object sender, RoutedEventArgs e)
+        {
+            int temp = int.Parse(number1.Text) / int.Parse(number2.Text);
+            result.Text = temp.ToString();
+        }
     }
 }

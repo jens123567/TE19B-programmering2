@@ -1,12 +1,23 @@
-﻿<Window x:Class="calculator.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:calculator"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+﻿<Window x:Class="calculator.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:calculator" mc:Ignorable="d" Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Label>Enkel Miniräknare</Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Margin="5">Tal 1</Label>
+            <TextBox Name="number1" Margin="5" Width="70" Height="20"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Margin="5">Tal 2</Label>
+            <TextBox Name="number2" Margin="5" Width="70" Height="20"></TextBox>
+        </StackPanel>
+        <DockPanel HorizontalAlignment="Stretch">
+            <Button Click="addNumbers" Margin="20">PLus</Button>
+            <Button Click="subtract" Margin="20">Minus</Button>
+            <Button Click="multiply" Margin="20">Multiplikatio</Button>
+            <Button Click="divide" Margin="20">Division</Button>
+        </DockPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Margin="5">Resultat</Label>
+            <TextBox Name="result" Margin="5" Width="70" Height="20"></TextBox>
+        </StackPanel>
+    </StackPanel>
 </Window>
