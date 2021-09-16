@@ -1,0 +1,21 @@
+﻿<Window x:Class="uppgift3.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:uppgift3" mc:Ignorable="d" Title="Miniräknare" Width="280" Height="250" Background="#EEE">
+    <StackPanel Margin="10">
+        <Label FontSize="25">Enkel miniräknare</Label>
+        <DockPanel HorizontalAlignment="Stretch">
+            <Label>Tal 1</Label>
+            <TextBox Name="tal1Ruta" Margin="5"/>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Stretch">
+            <Label>Tal 2</Label>
+            <TextBox Name="tal2Ruta" Margin="5"/>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Stretch">
+            <Button Name="knappPlus" Click="knappPlusClick" Margin="5" Width="50" Height="30">+</Button>
+            <Button Name="knappMinus" Click="knappMinusClick" Margin="5" Width="50" Height="30">-</Button>
+            <Button Name="knappGånger" Click="knappGångerClick" Margin="5" Width="50" Height="30">*</Button>
+            <Button Name="knappDividera" Click="knappDivideraClick" Margin="5" Width="50" Height="30">/</Button>
+        </DockPanel>
+        <Label>Resultat</Label>
+        <TextBox Name="resultatRuta" Margin="5" Height="20" FontStyle="italic" AcceptsReturn="True" IsReadOnly="True"/>
+    </StackPanel>
+</Window>
