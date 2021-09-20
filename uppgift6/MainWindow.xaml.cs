@@ -42,6 +42,8 @@ namespace uppgift6
 
                 medelRuta.Text = $"{summa}/{antalTal} = {summa / antalTal}";
             }
+
+            talRuta.Text = "";
         }
     }
 }
