@@ -31,6 +31,11 @@ namespace Labb4
             rader = File.ReadAllLines("./countries.csv");
         }
 
+        /// <summary>
+        /// kollar klick
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ClickSök(object sender, RoutedEventArgs e)
         {
 
@@ -43,10 +48,11 @@ namespace Labb4
             string sökterm = rutaSökterm.Text;
 
             // Loopa igenom alla rader
-            foreach (var rad in rader)
+            //foreach (var rad in rader)
+            for (var i = 1; i < rader.Length; i++)
             {
                 // Dela upp raden
-                string[] delar = rad.Split(',');
+                string[] delar = rader[i].Split(',');
 
                 // Plocka ut land
                 string land = delar[1];

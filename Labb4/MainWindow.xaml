@@ -18,6 +18,6 @@
         <Button Grid.Row="2" Grid.ColumnSpan="2" Margin="5" Height="30" Click="ClickSök">Sök!</Button>
         <Label Grid.Row="3" Grid.Column="0">Matchande länder</Label>
         <TextBox Grid.Row="3" Grid.Column="1" Margin="5" MinHeight="150" MaxHeight="300" TextWrapping="Wrap" IsReadOnly="True" Name="rutaResultat"/>
-        <TextBox Grid.Row="4" Grid.ColumnSpan="2" Name="rutaStatus"/>
+        <TextBlock Grid.Row="4" Grid.ColumnSpan="2" Name="rutaStatus"/>
     </Grid>
 </Window>
