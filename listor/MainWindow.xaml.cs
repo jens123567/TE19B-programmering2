@@ -37,7 +37,7 @@ namespace listor
             {
                 rutaLista.Text += namn + "\n";
                 rutaFel.Text = "Inga fel...";
-                namnLista.Add(namn);
+                namnLista.Add(namn);        
             }
             else
             {

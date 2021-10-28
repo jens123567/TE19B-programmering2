@@ -1,0 +1,22 @@
+[
+  {
+    "namn": "volmar",
+    "lön": 123,
+    "timmar": 124
+  },
+  {
+    "namn": "albin",
+    "lön": 132,
+    "timmar": 124
+  },
+  {
+    "namn": "tim",
+    "lön": 123,
+    "timmar": 5135
+  },
+  {
+    "namn": "jia",
+    "lön": 123,
+    "timmar": 1242512
+  }
+]
