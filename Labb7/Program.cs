@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.ComponentModel;
+using System;
 
 namespace Labb7
 {
@@ -30,6 +31,7 @@ namespace Labb7
 
             Console.WriteLine("ange din månadslön");
             objekt.Lön = ReadInt();
+
 
 
         }
