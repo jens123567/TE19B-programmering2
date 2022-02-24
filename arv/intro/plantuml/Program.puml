@@ -1,0 +1,20 @@
+@startuml
+class Person {
+    + Namn : string <<get>> <<set>>
+    + Mobil : string <<get>> <<set>>
+    + VisaInfo() : void
+}
+class Student {
+    + Årskurs : string <<get>> <<set>>
+    + Program : string <<get>> <<set>>
+    + VisaInfoStudent() : void
+}
+class Lärare {
+    + Anställningsår : string <<get>> <<set>>
+    + Ämne : string <<get>> <<set>>
+    + VisaInfoLärare() : void
+}
+
+Person <|-- Student
+Person <|-- Lärare
+@enduml

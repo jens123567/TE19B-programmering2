@@ -94,4 +94,13 @@ namespace biluthyrning
         }
     }
 
+    public class Kund
+    {
+        public string PersonNr { get; set; }
+        public string Fnamn { get; set; }
+        public string Enamn { get; set; }
+        public string Mobil { get; set; }
+
+    }
+
 }

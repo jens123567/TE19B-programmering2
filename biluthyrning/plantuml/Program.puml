@@ -1,0 +1,26 @@
+@startuml
+skinparam ClassAttributeIconSize 0
+skinparam Monochrome true
+class Program {
+    {static} Main(args:string[]) : void
+}
+class Avtal {
+    + RegNr : string <<get>> <<set>>
+    + Km : int <<get>> <<set>>
+    + Kostnad : int <<get>> <<set>>
+    + Tidsram : int <<get>> <<set>>
+    + Personnr : string <<get>> <<set>>
+    + RäknaKostnad() : int?
+    + RäknaInlämningsdatum() : DateTime
+}
+class Kund {
+    + PersonNr : string <<get>> <<set>>
+    + Fnamn : string <<get>> <<set>>
+    + Enamn : string <<get>> <<set>>
+    + Mobil : string <<get>> <<set>>
+}
+class "List`1"<T> {
+}
+Program o-> "avtalsLista<Avtal>" "List`1"
+Avtal --> "Datum" DateTime
+@enduml

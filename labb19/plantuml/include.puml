@@ -1,0 +1,11 @@
+@startuml
+!include .\\App.xaml.puml
+!include .\\AssemblyInfo.puml
+!include .\\MainWindow.xaml.puml
+!include .\\obj\Debug\net5.0-windows\.NETCoreApp,Version=v5.0.AssemblyAttributes.puml
+!include .\\obj\Debug\net5.0-windows\App.g.puml
+!include .\\obj\Debug\net5.0-windows\App.g.i.puml
+!include .\\obj\Debug\net5.0-windows\labb19.AssemblyInfo.puml
+!include .\\obj\Debug\net5.0-windows\MainWindow.g.puml
+!include .\\obj\Debug\net5.0-windows\MainWindow.g.i.puml
+@enduml

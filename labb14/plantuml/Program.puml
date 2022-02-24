@@ -1,0 +1,11 @@
+@startuml
+class Program {
+    {static} Main(args:string[]) : void
+}
+class Boken {
+    + författare : string <<get>> <<set>>
+    + titel : string <<get>> <<set>>
+    + antalSidor : int <<get>> <<set>>
+    + SkrivUt() : void
+}
+@enduml

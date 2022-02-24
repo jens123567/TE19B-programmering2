@@ -1,0 +1,21 @@
+@startuml
+class Creature {
+    + Health : int <<get>> <<set>>
+    + Shield : int <<get>> <<set>>
+    # Name : string <<get>> <<set>>
+    + Creature(name:string)
+    + GetInfo() : void
+}
+class Knight {
+    # Weapon : string <<get>> <<set>>
+    + Knight(name:string, weapon:string)
+    + Attack() : void
+}
+class Dragon {
+    # Color : string <<get>> <<set>>
+    + Dragon(name:string, color:string)
+    + Attack() : void
+}
+Creature <|-- Knight
+Creature <|-- Dragon
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+class MainWindow <<partial>> {
+    + MainWindow()
+}
+class Media {
+    + Titel : string <<get>> <<set>>
+    + <<virtual>> TillText() : string
+}
+class Film {
+    + Regissör : string <<get>> <<set>>
+    + Längd : int <<get>> <<set>>
+    + Film(Längd:string, Regissör:string, Titel:string)
+    + <<override>> TillText() : string
+}
+class Bok {
+    + Författare : string <<get>> <<set>>
+    + AntalSidor : int <<get>> <<set>>
+    + Bok(Författare:string, AntalSidor:string, Titel:string)
+    + <<override>> TillText() : string
+}
+Window <|-- MainWindow
+MainWindow +-- Media
+MainWindow +-- Film
+Media <|-- Film
+MainWindow +-- Bok
+Media <|-- Bok
+@enduml

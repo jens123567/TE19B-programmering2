@@ -1,0 +1,64 @@
+﻿<Window x:Class="labb19.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:labb19" mc:Ignorable="d" Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Name="flikar" Grid.Row="0" Grid.Column="0" Margin="5" MinWidth="200">
+            <TabItem Header="Film" IsSelected="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Titel</Label>
+                    <TextBox Name="rutaFilmtitel" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                    <Label Grid.Row="1" Grid.Column="0">Regissör</Label>
+                    <TextBox Name="rutaRegissör" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                    <Label Grid.Row="2" Grid.Column="0">Spellängd (min)</Label>
+                    <TextBox Name="rutaLängd" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                    <Button Click="KlickSparaFilm" Grid.Row="3" Grid.Column="0">Spara</Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Bok">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Titel</Label>
+                    <TextBox Name="rutaBoktitel" Grid.Row="0" Grid.Column="1" Margin="5"/>
+                    <Label Grid.Row="1" Grid.Column="0">Författare</Label>
+                    <TextBox Name="rutaFörfattare" Grid.Row="1" Grid.Column="1" Margin="5"/>
+                    <Label Grid.Row="2" Grid.Column="0">Antal sidor</Label>
+                    <TextBox Name="rutaSidor" Grid.Row="2" Grid.Column="1" Margin="5"/>
+                    <Button Click="KlickSparaBok" Grid.Row="3" Grid.Column="0">Spara</Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <ListBox Name="rutaResultat" Grid.Column="1"></ListBox>
+        <Label Grid.Column="1" Grid.Row="4">
+            <RadioButton>
+                <RadioButton>
+                    <RadioButton></RadioButton>
+                </RadioButton>
+            </RadioButton>
+        </Label>
+    </Grid>
+</Window>
