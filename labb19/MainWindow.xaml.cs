@@ -20,8 +20,9 @@ namespace labb19
     /// </summary>
     public partial class MainWindow : Window
     {
-        static List<Bok> bokSamling = new List<Bok>();
-        static List<Film> filmSamling = new List<Film>();
+        // static List<Bok> bokSamling = new List<Bok>();
+        //static List<Film> filmSamling = new List<Film>();
+        static List<Media> samling = new List<Media>();
 
         public MainWindow()
         {
@@ -30,14 +31,66 @@ namespace labb19
         private void KlickSparaBok(object sender, RoutedEventArgs e)
         {
             Bok boken = new Bok(rutaBoktitel.Text, rutaFörfattare.Text, rutaSidor.Text);
-            bokSamling.Add(boken);
+            samling.Add(boken);
             rutaResultat.Items.Add(boken.TillText());
         }
         private void KlickSparaFilm(object sender, RoutedEventArgs e)
         {
             Film filmen = new Film(rutaFilmtitel.Text, rutaRegissör.Text, rutaLängd.Text);
-            filmSamling.Add(filmen);
+            samling.Add(filmen);
             rutaResultat.Items.Add(filmen.TillText());
+        }
+        private void CheckaRadio(object sender, RoutedEventArgs e)
+        {
+            /* if (allting.IsChecked == true)
+             {
+                 Console.WriteLine("allt");
+             }
+             else if (bocker.IsChecked == true)
+             {
+                 Console.WriteLine("bok");
+             }
+             else if (filmer.IsChecked == true)
+             {
+                 Console.WriteLine("film");
+             }*/
+
+            string typ = ((RadioButton)sender).Name;
+            bool ärBok = false;
+            bool ärFilm = false;
+            switch (typ)
+            {
+                case "allting":
+                    ärBok = true;
+                    ärFilm = true;
+                    break;
+
+                case "bocker":
+                    ärBok = true;
+                    break;
+
+                case "film":
+                    ärFilm = true;
+                    break;
+
+
+                default:
+                    break;
+            }
+
+            foreach (var sak in samling)
+            {
+                if (sak is Bok && ärBok)
+                {
+                    rutaResultat.Items.Add(((Bok)sak).TillText());
+                }
+                else if (sak is Film && ärFilm)
+                {
+                    rutaResultat.Items.Add(sak.TillText());
+                }
+            }
+
+
         }
 
     }
@@ -84,4 +137,6 @@ namespace labb19
             return ($"{Titel} ({Författare}, {AntalSidor})");
         }
     }
+
+
 }

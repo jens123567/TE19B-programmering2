@@ -53,12 +53,10 @@
             </TabItem>
         </TabControl>
         <ListBox Name="rutaResultat" Grid.Column="1"></ListBox>
-        <Label Grid.Column="1" Grid.Row="4">
-            <RadioButton>
-                <RadioButton>
-                    <RadioButton></RadioButton>
-                </RadioButton>
-            </RadioButton>
-        </Label>
+        <StackPanel Grid.Column="1" Grid.Row="4">
+            <RadioButton Name="allting" Click="CheckaRadio" IsChecked="True" GroupName="filter"></RadioButton>
+            <RadioButton Name="bocker" Click="CheckaRadio" GroupName="filter"></RadioButton>
+            <RadioButton Name="filmer" Click="CheckaRadio" GroupName="filter"></RadioButton>
+        </StackPanel>
     </Grid>
 </Window>

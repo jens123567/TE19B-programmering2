@@ -36,6 +36,23 @@ namespace intro
         }
     }
 
+    //create class test and create a method that takes a person as a parameter
+    class Test : Person
+    {
+        //create constructor
+        public Test(Person p)
+        {
+            Namn = p.Namn;
+            Mobil = p.Mobil;
+        }
+        public void VisaInfoTest(Person p)
+        {
+            Console.WriteLine($"Namn: {p.Namn}, Mobil: {p.Mobil}");
+        }
+    }
+
+
+
     class Program
     {
         static void Main(string[] args)
@@ -61,6 +78,8 @@ namespace intro
             {
                 // skapa en instans
                 Student student = new Student();
+                //call class test   
+                Test test = new Test(student);
 
                 Console.WriteLine("Vad heter personen?");
                 student.Namn = Console.ReadLine();
