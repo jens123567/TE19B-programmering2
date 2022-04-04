@@ -10,6 +10,9 @@ namespace MonoAsteroids
         private SpriteBatch _spriteBatch;
         Texture2D backgroundTexture;
         Player player;
+        Shoot shoot;
+
+        KeyboardState previousKeyboardState;
 
         public Game1()
         {
@@ -22,6 +25,10 @@ namespace MonoAsteroids
 
         protected override void Initialize()
         {
+            _graphics.PreferredBackBufferHeight = Globals.ScreenHeight;
+            _graphics.PreferredBackBufferWidth = Globals.ScreenWidth;
+            _graphics.ApplyChanges();
+
             // TODO: Add your initialization logic here
             player = new Player(this);
             Components.Add(player);
@@ -42,8 +49,37 @@ namespace MonoAsteroids
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            KeyboardState state = Keyboard.GetState();
+
+            if (state.IsKeyDown(Keys.Up))
+            {
+                player.Accelerate(1);
+            }
+            if (state.IsKeyDown(Keys.Down))
+            {
+                player.Accelerate(-1);
+            }
+
+            if (state.IsKeyDown(Keys.Left))
+            {
+                player.Rotation -= 0.05f;
+            }
+            else if (state.IsKeyDown(Keys.Right))
+            {
+                player.Rotation += 0.05f;
+            }
+
+            if (state.IsKeyDown(Keys.Space))
+            {
+                //shoot.Bullet();
+                player.Bullet();
+            }
+
+
+
             player.Update(gameTime);
             // TODO: Add your update logic here
+            previousKeyboardState = state;
 
             base.Update(gameTime);
         }
@@ -65,6 +101,8 @@ namespace MonoAsteroids
                     _spriteBatch.Draw(backgroundTexture, new Vector2(x, y), Color.White);
                 }
             }
+
+            player.Draw(_spriteBatch);
 
             _spriteBatch.End();
 
