@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace MonoAsteroids
 {
@@ -15,12 +16,17 @@ namespace MonoAsteroids
         public Vector2 bulletSpeed { get; set; }
 
         public float Rotation { get; set; }
+        public float BulletRotation { get; set; }
+        public bool isShooting { get; set; }
+
         private Texture2D playerTexture;
         private Texture2D bulletTexture;
 
         public Player(Game game) : base(game)
         {
             Position = new Vector2(Globals.ScreenWidth / 2, Globals.ScreenHeight / 2);
+            bulletPostition = Position;
+
         }
 
         protected override void LoadContent()
@@ -28,13 +34,21 @@ namespace MonoAsteroids
             playerTexture = Game.Content.Load<Texture2D>("player");
             bulletTexture = Game.Content.Load<Texture2D>("laser");
 
+
+
             base.LoadContent();
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(playerTexture, Position, null, Color.White, Rotation + MathHelper.PiOver2, new Vector2(playerTexture.Width / 2, playerTexture.Height / 2), 1.0f, SpriteEffects.None, 0f);
-            spriteBatch.Draw(bulletTexture, bulletPostition, null, Color.White, Rotation + MathHelper.PiOver2, new Vector2(bulletTexture.Width / 2, bulletTexture.Height / 2), 1.0f, SpriteEffects.None, 0f);
+
+            while (isShooting)
+            {
+                spriteBatch.Draw(bulletTexture, bulletPostition, null, Color.White, Rotation + MathHelper.PiOver2, new Vector2(bulletTexture.Width / 2, bulletTexture.Height / 2), 1.0f, SpriteEffects.None, 0f);
+
+            }
+
         }
 
         public override void Update(GameTime gameTime)
@@ -50,7 +64,25 @@ namespace MonoAsteroids
             if (Position.Y > Globals.GameArea.Bottom)
                 Position = new Vector2(Position.X, Globals.GameArea.Top);
 
+
+            // KeyboardState state = Keyboard.GetState();
+
+            KeyboardState state = Keyboard.GetState();
+
+            isShooting = false;
+            if (state.IsKeyDown(Keys.Space))
+            {
+
+                bulletPostition = Position;
+                isShooting = true;
+            }
+
+
+            BulletRotation = Rotation;
             bulletPostition += bulletSpeed;
+
+
+            // bulletPostition += bulletSpeed;
 
             base.Update(gameTime);
         }
@@ -67,7 +99,9 @@ namespace MonoAsteroids
 
         public void Bullet()
         {
-            bulletSpeed += new Vector2((float)Math.Cos(Rotation), (float)Math.Sin(Rotation)) * (0.60f);
+
+            bulletSpeed = new Vector2((float)Math.Cos(BulletRotation), (float)Math.Sin(BulletRotation)) * (1.30f);
+
         }
 
     }

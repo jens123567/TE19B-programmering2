@@ -38,15 +38,14 @@ namespace MonoAsteroids
         {
             BulletPosition += bulletSpeed;
 
+
             base.Update(gameTime);
         }
 
 
         public void Bullet()
         {
-            bulletSpeed = 10 * new Vector2((float)Math.Cos(Rotation), (float)Math.Sin(Rotation));
-
-
+            bulletSpeed += new Vector2((float)Math.Cos(Rotation), (float)Math.Sin(Rotation)) * (0.60f);
         }
 
 
