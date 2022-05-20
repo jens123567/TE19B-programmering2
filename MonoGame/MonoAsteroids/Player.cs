@@ -100,7 +100,7 @@ namespace MonoAsteroids
         public void Bullet()
         {
 
-            bulletSpeed = new Vector2((float)Math.Cos(BulletRotation), (float)Math.Sin(BulletRotation)) * (1.30f);
+            bulletSpeed += new Vector2((float)Math.Cos(BulletRotation), (float)Math.Sin(BulletRotation)) * (1.30f);
 
         }
 
